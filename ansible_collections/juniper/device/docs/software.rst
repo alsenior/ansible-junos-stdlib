@@ -243,7 +243,7 @@ The following options may be specified for this module:
     <td>False</td>
     <td><ul><li>yes</li><li>no</li></ul></td>
     <td>
-        <div>Indicates if the device flash should be repartitioned during software install. Required on certian platfroms to go beyond version 23..</div>
+        <div>Indicates if the device flash should be repartitioned during software install. Required on certian platform to go beyond version 23.</div>
     </td>
     </tr>
 

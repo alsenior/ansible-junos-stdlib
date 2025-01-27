@@ -221,7 +221,7 @@ options:
   partition: 
     description:
       - Indicates if the Device flash should be repartitioned during software install. 
-        Required on certian platfroms to go beyond Version 23. 
+        Required on certian platforms to go beyond Version 23. 
     required: false 
     default: false 
     type: bool
