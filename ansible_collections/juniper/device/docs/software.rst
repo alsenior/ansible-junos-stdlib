@@ -237,6 +237,17 @@ The following options may be specified for this module:
     </tr>
 
     <tr>
+    <td>partition<br/><div style="font-size: small;"></div></td>
+    <td>bool</td>
+    <td>no</td>
+    <td>False</td>
+    <td><ul><li>yes</li><li>no</li></ul></td>
+    <td>
+        <div>Indicates if the device flash should be repartitioned during software install. Required on certian platfroms to go beyond version 23..</div>
+    </td>
+    </tr>
+
+    <tr>
     <td>reboot<br/><div style="font-size: small;"></div></td>
     <td>bool</td>
     <td>no</td>
