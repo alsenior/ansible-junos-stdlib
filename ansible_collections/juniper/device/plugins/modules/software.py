@@ -218,6 +218,13 @@ options:
     required: false
     default: false
     type: bool
+  partition: 
+    description:
+      - Indicates if the Device flash should be repartitioned during software install. 
+        Required on certian platfroms to go beyond Version 23. 
+    required: false 
+    default: false 
+    type: bool
   reboot:
     description:
       - Indicates if the target Junos device should be rebooted after
@@ -486,6 +493,7 @@ def main():
         reboot_pause=dict(required=False, type="int", default=10),
         issu=dict(required=False, type="bool", default=False),
         nssu=dict(required=False, type="bool", default=False),
+        partition=dict(required=False,type="bool",default=False),
         force_host=dict(required=False, type="bool", default=False),
         validate=dict(required=False, type="bool", default=False),
         cleanfs=dict(required=False, type="bool", default=True),
@@ -533,6 +541,7 @@ def main():
     all_re = junos_module.params.pop("all_re")
     member_id = junos_module.params.pop("member_id")
     kwargs = junos_module.params.pop("kwargs")
+    partition = junos_module.params.pop("partition")
 
     url = None
     remote_dir = None
@@ -696,6 +705,7 @@ def main():
         install_params["timeout"] = install_timeout
         install_params["all_re"] = all_re
         install_params["member_id"] = member_id
+        install_params["partition"] = partition
         for key in option_keys:
             value = junos_module.params.get(key)
             if value is not None:
